@@ -47,11 +47,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.bridgelabz" />
-    </key>
-  </component>
+
   <component name="RunManager">
     <configuration name="EmployeePayroll" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bridgelabz.EmployeePayroll" />
@@ -94,6 +90,7 @@
       </map>
     </option>
   </component>
+
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
