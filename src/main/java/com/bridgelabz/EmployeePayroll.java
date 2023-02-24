@@ -14,7 +14,7 @@ public class EmployeePayroll {
     public static Connection connected() throws EmployeeCustomException {
         String jdbcURL = "jdbc:mysql://localhost:3306/payroll_service?useSSL=false"; // declare JdbcURL
         String UserName = "root";
-        String Password = "Shiva@12";
+        String Password = "Root";
         Connection connection = null;
 
         try {
@@ -29,7 +29,7 @@ public class EmployeePayroll {
         try {
             System.out.println("Connecting to Database...:" + jdbcURL); // for loading the drive for connect
             connection = DriverManager.getConnection(jdbcURL, UserName, Password);
-            System.out.println("coneection successfull" + connection);
+            System.out.println("connection successful" + connection);
 
         } catch (Exception e) {
             e.printStackTrace();
