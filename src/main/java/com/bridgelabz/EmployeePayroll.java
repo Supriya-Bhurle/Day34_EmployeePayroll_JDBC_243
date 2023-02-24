@@ -1,29 +1,34 @@
 package com.bridgelabz;
 
 import java.sql.*;
-import java.util.Enumeration;
 
 public class EmployeePayroll {
-    public static void preparedStatement(String name, double salary) {
+    public static void CreatedConnection() {
 
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/payroll_service", "root",
                     "Root");
-            String s = "update employee_payroll set Salary = ? where Name=?";
+            String s = " \"select * from employee_payroll\"";
             PreparedStatement ps = conn.prepareStatement(s);
-            ps.setDouble(1, salary);
-            ps.setString(2, name);
-            ps.executeUpdate();
-            boolean result = true;
+            ResultSet result = ps.executeQuery();
+
+            while (result.next()) {
+                int Id = result.getInt(1);
+                String Name = result.getString(2);
+                Double Salary = result.getDouble(3);
+                String Start_Date = result.getString(4);
+                String Gender = result.getString(5);
+                System.out.println("id- " + Id + " Name:- " + Name + " | " + " Salary:- " + Salary
+                        + " Date:- " + Start_Date + " Gender:- " + Gender);
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     public static void main(String[] args) throws SQLException {
-        preparedStatement("Supriya",  300000.000);
-
+        CreatedConnection();
     }
+
 }
