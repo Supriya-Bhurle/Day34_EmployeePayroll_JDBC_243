@@ -9,6 +9,7 @@ public class EmployeePayroll {
     public static void main(String[] args) throws EmployeeCustomException, SQLException {
         con = connected();
         reteriveData(con);
+        updateData(con);
     }
 
     public static Connection connected() throws EmployeeCustomException {
@@ -49,6 +50,14 @@ public class EmployeePayroll {
             System.out.print(" | ");
             System.out.println();
         }
+    }
+    public static void updateData(Connection connection) throws EmployeeCustomException, SQLException {
+        PreparedStatement ps = connection.prepareStatement("update employee_payroll set salary = ? where id = ?;");
+        ps.setDouble(1, 80000.00);
+        ps.setInt(2, 2);
+
+        ps.executeUpdate();
+        System.out.println("Update Successfully");
     }
 
     public static void listDrivers() {
